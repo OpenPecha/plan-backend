@@ -4,7 +4,7 @@
  
 ```bash
 poetry shell
-uvicorn pecha_api.main:app --reload
+uvicorn plan_api.main:app --reload
 ```
 
 ## Docker (Postgres + Dragonfly) for local setup
@@ -29,7 +29,7 @@ Stop the services:
 docker compose down
 ```
 Notes:
-- Both services run on the `pecha-network` Docker network.
+- Both services run on the `plan-network` Docker network.
 - If ports 5434 or 6379 are in use, stop the conflicting service or adjust the mappings in `local_setup/docker-compose.yml`.
 
 
