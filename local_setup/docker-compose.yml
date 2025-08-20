@@ -2,12 +2,12 @@ version: '3.8'
 services:
   db-local:
     image: postgres:16-alpine
-    container_name: pecha-database
+    container_name: plan-database
     restart: always
     environment:
       - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=pechaAdmin
-      - POSTGRES_DB=pecha
+      - POSTGRES_PASSWORD=planAdmin
+      - POSTGRES_DB=plan
     logging:
       options:
         max-size: 10m
@@ -17,7 +17,7 @@ services:
     volumes:
       - ./data/database-local:/var/lib/postgresql/data
     networks:
-      - pecha-network
+      - plan-network
 
   dragonfly:
     image: 'docker.dragonflydb.io/dragonflydb/dragonfly'
@@ -36,5 +36,5 @@ volumes:
   dragonflydata:
 
 networks:
-  pecha-network:
+  plan-network:
     driver: bridge
